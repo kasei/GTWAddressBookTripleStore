@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		37F96DA617ACF7D700235009 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F96DA517ACF7D700235009 /* CoreFoundation.framework */; };
 		37F96DAC17ACF7D700235009 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37F96DAA17ACF7D700235009 /* InfoPlist.strings */; };
+		37F96DB717ACF81A00235009 /* GTWAddressBookTripleStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F96DB617ACF81A00235009 /* GTWAddressBookTripleStore.m */; };
+		37F96DBE17ACF8CF00235009 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F96DBD17ACF8CF00235009 /* AddressBook.framework */; };
+		37F96DD817AD5CCC00235009 /* GTWSWBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F96DD717AD5CCC00235009 /* GTWSWBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +20,10 @@
 		37F96DA917ACF7D700235009 /* GTWAddressBookTripleStore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GTWAddressBookTripleStore-Info.plist"; sourceTree = "<group>"; };
 		37F96DAB17ACF7D700235009 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37F96DAD17ACF7D700235009 /* GTWAddressBookTripleStore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GTWAddressBookTripleStore-Prefix.pch"; sourceTree = "<group>"; };
+		37F96DB517ACF81A00235009 /* GTWAddressBookTripleStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTWAddressBookTripleStore.h; sourceTree = "<group>"; };
+		37F96DB617ACF81A00235009 /* GTWAddressBookTripleStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTWAddressBookTripleStore.m; sourceTree = "<group>"; };
+		37F96DBD17ACF8CF00235009 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		37F96DD717AD5CCC00235009 /* GTWSWBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTWSWBase.framework; path = ../../../../../Library/Frameworks/GTWSWBase.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,7 +31,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F96DBE17ACF8CF00235009 /* AddressBook.framework in Frameworks */,
 				37F96DA617ACF7D700235009 /* CoreFoundation.framework in Frameworks */,
+				37F96DD817AD5CCC00235009 /* GTWSWBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +43,7 @@
 		37F96D9917ACF7D700235009 = {
 			isa = PBXGroup;
 			children = (
+				37F96DBD17ACF8CF00235009 /* AddressBook.framework */,
 				37F96DA717ACF7D700235009 /* GTWAddressBookTripleStore */,
 				37F96DA417ACF7D700235009 /* Frameworks */,
 				37F96DA317ACF7D700235009 /* Products */,
@@ -51,6 +61,7 @@
 		37F96DA417ACF7D700235009 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37F96DD717AD5CCC00235009 /* GTWSWBase.framework */,
 				37F96DA517ACF7D700235009 /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
@@ -59,6 +70,8 @@
 		37F96DA717ACF7D700235009 /* GTWAddressBookTripleStore */ = {
 			isa = PBXGroup;
 			children = (
+				37F96DB517ACF81A00235009 /* GTWAddressBookTripleStore.h */,
+				37F96DB617ACF81A00235009 /* GTWAddressBookTripleStore.m */,
 				37F96DA817ACF7D700235009 /* Supporting Files */,
 			);
 			path = GTWAddressBookTripleStore;
@@ -136,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F96DB717ACF81A00235009 /* GTWAddressBookTripleStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +230,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/GTWSWBase-bpvpvhggcugdjxddhvalusjqdjts/Build/Products/Debug\"",
+					"\"$(SRCROOT)/../../../../../Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTWAddressBookTripleStore/GTWAddressBookTripleStore-Prefix.pch";
 				INFOPLIST_FILE = "GTWAddressBookTripleStore/GTWAddressBookTripleStore-Info.plist";
@@ -229,6 +248,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/GTWSWBase-bpvpvhggcugdjxddhvalusjqdjts/Build/Products/Debug\"",
+					"\"$(SRCROOT)/../../../../../Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTWAddressBookTripleStore/GTWAddressBookTripleStore-Prefix.pch";
 				INFOPLIST_FILE = "GTWAddressBookTripleStore/GTWAddressBookTripleStore-Info.plist";
