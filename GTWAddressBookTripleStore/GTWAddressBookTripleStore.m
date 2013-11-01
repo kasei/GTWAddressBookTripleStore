@@ -76,6 +76,10 @@ static NSUInteger emitProperties (ABPerson* person, GTWIRI* subject, NSString* p
     return @"{}";
 }
 
++ (NSSet*) implementedProtocols {
+    return [NSSet setWithObjects:@protocol(GTWTripleStore), nil];
+}
+
 - (instancetype) initWithDictionary: (NSDictionary*) dictionary {
     return [self init];
 }
