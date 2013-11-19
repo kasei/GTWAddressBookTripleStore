@@ -162,13 +162,13 @@ static NSUInteger emitProperties (ABPerson* person, GTWIRI* subject, NSString* p
     
     
     NSArray* people = [self.ab people];
-    GTWIRI* foafPerson  = [[GTWIRI alloc] initWithIRI:@"http://xmlns.com/foaf/0.1/Person"];
-    GTWIRI* foafname  = [[GTWIRI alloc] initWithIRI:@"http://xmlns.com/foaf/0.1/name"];
-    GTWIRI* foaflname  = [[GTWIRI alloc] initWithIRI:@"http://xmlns.com/foaf/0.1/familyName"];
-    GTWIRI* foaffname  = [[GTWIRI alloc] initWithIRI:@"http://xmlns.com/foaf/0.1/givenName"];
-    //    GTWIRI* foafnick   = [[GTWIRI alloc] initWithIRI:@"http://xmlns.com/foaf/0.1/nick"];
-    //    GTWIRI* foafhomepage   = [[GTWIRI alloc] initWithIRI:@"http://xmlns.com/foaf/0.1/homepage"];
-    GTWIRI* rdftype = [[GTWIRI alloc] initWithIRI:@"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"];
+    GTWIRI* foafPerson  = [[GTWIRI alloc] initWithValue:@"http://xmlns.com/foaf/0.1/Person"];
+    GTWIRI* foafname  = [[GTWIRI alloc] initWithValue:@"http://xmlns.com/foaf/0.1/name"];
+    GTWIRI* foaflname  = [[GTWIRI alloc] initWithValue:@"http://xmlns.com/foaf/0.1/familyName"];
+    GTWIRI* foaffname  = [[GTWIRI alloc] initWithValue:@"http://xmlns.com/foaf/0.1/givenName"];
+    //    GTWIRI* foafnick   = [[GTWIRI alloc] initWithValue:@"http://xmlns.com/foaf/0.1/nick"];
+    //    GTWIRI* foafhomepage   = [[GTWIRI alloc] initWithValue:@"http://xmlns.com/foaf/0.1/homepage"];
+    GTWIRI* rdftype = [[GTWIRI alloc] initWithValue:@"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"];
     
     NSMutableArray* buffer  = [NSMutableArray array];
     NSEnumerator* peopleenum    = [people objectEnumerator];
@@ -185,7 +185,7 @@ static NSUInteger emitProperties (ABPerson* person, GTWIRI* subject, NSString* p
                 return nil;
             NSString* uid   = [p uniqueId];
             NSString* uri   = [NSString stringWithFormat:@"tag:kasei.us,2013-05-12:%@", uid];
-            GTWIRI* person  = [[GTWIRI alloc] initWithIRI:uri];
+            GTWIRI* person  = [[GTWIRI alloc] initWithValue:uri];
             
             int showAsFlags = [[p valueForProperty:kABPersonFlags] intValue] & kABShowAsMask;
             //        NSLog(@"person as company: %d", showAsFlags);
@@ -210,7 +210,7 @@ static NSUInteger emitProperties (ABPerson* person, GTWIRI* subject, NSString* p
                     NSString* url   = data[@"url"];
                     Class class     = data[@"type"];
                     
-                    t   = propertyTriple(p, person, property, [[GTWIRI alloc] initWithIRI:url], class, nil);
+                    t   = propertyTriple(p, person, property, [[GTWIRI alloc] initWithValue:url], class, nil);
                     if (t)
                         [buffer addObject:t];
                 }
@@ -219,14 +219,14 @@ static NSUInteger emitProperties (ABPerson* person, GTWIRI* subject, NSString* p
                     NSString* url   = data[@"url"];
                     Class class     = data[@"type"];
                     
-                    NSArray* triples   = propertyTriples(p, person, property, [[GTWIRI alloc] initWithIRI:url], class, data[@"convert"]);
+                    NSArray* triples   = propertyTriples(p, person, property, [[GTWIRI alloc] initWithValue:url], class, data[@"convert"]);
                     for (id t in triples) {
                         [buffer addObject:t];
                     }
                 }
                 
                 if (fname && lname) {
-                    [buffer addObject: [[GTWTriple alloc] initWithSubject:person predicate:foafname object:[[GTWLiteral alloc] initWithString:[NSString stringWithFormat:@"%@ %@", fname.value, lname.value]]]];
+                    [buffer addObject: [[GTWTriple alloc] initWithSubject:person predicate:foafname object:[[GTWLiteral alloc] initWithValue:[NSString stringWithFormat:@"%@ %@", fname.value, lname.value]]]];
                 }
                 
                 //            if (!(fname || lname)) {
