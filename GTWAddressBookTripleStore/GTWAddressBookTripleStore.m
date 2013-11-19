@@ -13,7 +13,7 @@ static id<GTWTriple> propertyTriple (ABPerson* person, GTWIRI* subject, NSString
     
     id value        = [person valueForProperty:property];
     if (value) {
-        t.object        = [[class alloc] initWithString:value];
+        t.object        = [[class alloc] initWithValue:value];
         if (object)
             *object = t.object;
         return t;

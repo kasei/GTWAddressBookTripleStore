@@ -236,8 +236,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/GTWSWBase-bpvpvhggcugdjxddhvalusjqdjts/Build/Products/Debug\\\"",
-					"\\\"$(SRCROOT)/../../../../../Library/Frameworks\\\"",
 					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -255,8 +253,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/GTWSWBase-bpvpvhggcugdjxddhvalusjqdjts/Build/Products/Debug\\\"",
-					"\\\"$(SRCROOT)/../../../../../Library/Frameworks\\\"",
 					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
