@@ -143,6 +143,13 @@ static NSUInteger emitProperties (ABPerson* person, GTWIRI* subject, NSString* p
 - (NSEnumerator*) tripleEnumeratorMatchingSubject: (id<GTWTerm>) s predicate: (id<GTWTerm>) p object: (id<GTWTerm>) o error:(NSError **)error {
 //    NSArray* triples    = [self getTriplesMatchingSubject:s predicate:p object:o error:error];
 //    return [triples objectEnumerator];
+    if (p && [p isKindOfClass:[GTWIRI class]]) {
+        NSSet* recognized   = [NSSet setWithObjects:@"http://www.w3.org/1999/02/22-rdf-syntax-ns#type", @"http://xmlns.com/foaf/0.1/name", @"http://xmlns.com/foaf/0.1/familyName", @"http://xmlns.com/foaf/0.1/givenName", @"http://xmlns.com/foaf/0.1/nick", @"http://xmlns.com/foaf/0.1/homepage", @"http://xmlns.com/foaf/0.1/mbox_sha1sum", nil];
+        if (![recognized containsObject:p.value]) {
+            return [@[] objectEnumerator];
+        }
+    }
+    
     NSDictionary* propertyPredicates    = @{
                                             //                                            kABFirstNameProperty: @"http://xmlns.com/foaf/0.1/givenName",
                                             //                                            kABLastNameProperty: @"http://xmlns.com/foaf/0.1/familyName",
