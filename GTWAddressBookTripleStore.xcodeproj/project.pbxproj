@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		3700DDD6183B14DD00AF79C7 /* SPARQLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SPARQLKit.framework; path = ../../../../../Library/Frameworks/SPARQLKit.framework; sourceTree = "<group>"; };
-		37F96DA217ACF7D700235009 /* GTWAddressBookTripleStore.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GTWAddressBookTripleStore.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F96DA217ACF7D700235009 /* GTWAddressBookTripleStore.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GTWAddressBookTripleStore.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F96DA517ACF7D700235009 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		37F96DA917ACF7D700235009 /* GTWAddressBookTripleStore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GTWAddressBookTripleStore-Info.plist"; sourceTree = "<group>"; };
 		37F96DAB17ACF7D700235009 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		37F96DA317ACF7D700235009 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37F96DA217ACF7D700235009 /* GTWAddressBookTripleStore.bundle */,
+				37F96DA217ACF7D700235009 /* GTWAddressBookTripleStore.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 			);
 			name = GTWAddressBookTripleStore;
 			productName = GTWAddressBookTripleStore;
-			productReference = 37F96DA217ACF7D700235009 /* GTWAddressBookTripleStore.bundle */;
+			productReference = 37F96DA217ACF7D700235009 /* GTWAddressBookTripleStore.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -234,6 +234,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Frameworks",
@@ -241,9 +243,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTWAddressBookTripleStore/GTWAddressBookTripleStore-Prefix.pch";
 				INFOPLIST_FILE = "GTWAddressBookTripleStore/GTWAddressBookTripleStore-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Application Support/SPARQLKit/PlugIns";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
 		};
@@ -251,6 +253,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Frameworks",
@@ -258,9 +262,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTWAddressBookTripleStore/GTWAddressBookTripleStore-Prefix.pch";
 				INFOPLIST_FILE = "GTWAddressBookTripleStore/GTWAddressBookTripleStore-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Application Support/SPARQLKit/PlugIns";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = plugin;
 			};
 			name = Release;
 		};
